@@ -14454,6 +14454,8 @@ test_{network} = bottleneck_features['test']</code></pre>
 <p><strong>Question 5:</strong> Outline the steps you took to get to your final CNN architecture and your reasoning at each step.  Describe why you think the architecture is suitable for the current problem.</p>
 <p><strong>Answer:</strong></p>
 <p>This model uses the InceptionV3 model as the base model to get to over 80% accuracy. All it needed was a Dense layer with one vector for each breed and a softmax activation to fit a new topic with 133 classes.</p>
+<p>So why transfer learning works here?</p>
+<p>By using pre-trained models which have been previously trained on large datasets, we can directly use the weights and architecture obtained and apply the learning on our problem statement. This is known as transfer learning. We “transfer the learning” of the pre-trained model to our specific problem statement. The pre-trained networks demonstrate a strong ability to generalize to images outside the ImageNet dataset via transfer learning. We should be very careful while choosing what pre-trained model to use in our case. If the problem statement we have at hand is very different from the one on which the pre-trained model was trained – the prediction we would get would be very inaccurate. The one, InceptionV3, works on our dog breed classification problem pretty well because it was trained on Imagenet, which has been widely used to build various architectures since it is large enough (1.2M images) to create a generalized model.</p>
 
 </div>
 </div>
